@@ -149,6 +149,34 @@ input{
   font-weight:bold;
 }
 
+.telaResolucao{
+  display:none;
+}
+
+.telaResolucao.ativa{
+  display:block;
+}
+
+.contador{
+  text-align:center;
+  font-weight:bold;
+  color:#072b4f;
+  background:#e8f2ff;
+  padding:10px;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+
+.botoesResolucao{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+
+.botoesResolucao .btn{
+  flex:1;
+}
+
 .footer{
   text-align:center;
   font-size:13px;
@@ -182,14 +210,13 @@ input{
     <p><strong>Perícia Contábil Trabalhista</strong></p>
   </div>
 
-  <!-- TELA BLOQUEADA -->
   <div id="bloqueio" class="card">
     <span class="tag">LEIA!</span>
 
     <h2>PRATIQUE E CONTINUE...</h2>
 
     <p style="font-size:18px; line-height:1.5;">
-      A persistência é o caminho do êxito
+      A persistência é o caminho do êxito.
     </p>
 
     <label><strong>Nome do aluno:</strong></label>
@@ -205,7 +232,6 @@ input{
     </div>
   </div>
 
-  <!-- CONTEÚDO LIBERADO -->
   <div id="conteudo">
 
     <div class="card">
@@ -235,108 +261,146 @@ input{
 
       <div id="explicacao" class="explicacao">
 
-        <div class="etapa">
+        <div id="contador" class="contador">Etapa 1 de 9</div>
+
+        <div class="etapa telaResolucao ativa">
           <h3>Etapa 1 — Entender o período trabalhado</h3>
           O empregado entrou em <strong>01/03/2021</strong> e saiu em 
           <strong>31/03/2023</strong>.
           <br><br>
           Vamos contar com calma:
+
           <div class="calculo">
             Março/2021 a Fevereiro/2022 = 12 meses<br>
             Março/2022 a Fevereiro/2023 = 12 meses<br>
             Março/2023 = 1 mês
           </div>
+
           Portanto, ele trabalhou:
+
           <div class="calculo">
             12 + 12 + 1 = 25 meses
           </div>
         </div>
 
-        <div class="etapa">
+        <div class="etapa telaResolucao">
           <h3>Etapa 2 — Transformar meses em dias de férias</h3>
           A cada <strong>12 meses</strong>, o empregado ganha direito a 
           <strong>30 dias de férias</strong>.
-          <br><br>
-          Então:
+
+          <div class="calculo">
+            12 meses = 30 dias de férias
+          </div>
+
+          Como ele trabalhou 24 meses completos:
+
           <div class="calculo">
             24 meses = 60 dias de férias
           </div>
-          Sobrou ainda <strong>1 mês</strong> trabalhado.
+
+          Ainda sobrou <strong>1 mês</strong> trabalhado.
         </div>
 
-        <div class="etapa">
-          <h3>Etapa 3 — Calcular as férias proporcionais de 1 mês</h3>
+        <div class="etapa telaResolucao">
+          <h3>Etapa 3 — Férias proporcionais de 1 mês</h3>
           Se 12 meses dão direito a 30 dias, então 1 mês dá direito a:
+
           <div class="calculo">
             30 ÷ 12 = 2,5 dias
           </div>
+
           Logo, o total de férias adquiridas foi:
+
           <div class="calculo">
             60 + 2,5 = 62,5 dias
           </div>
         </div>
 
-        <div class="etapa">
+        <div class="etapa telaResolucao">
           <h3>Etapa 4 — Descontar as férias já gozadas</h3>
-          A questão diz que o empregado já tirou <strong>15 dias de férias</strong>.
+          A questão informa que o empregado já gozou 
+          <strong>15 dias de férias</strong>.
           <br><br>
-          Então, precisamos retirar esses 15 dias do total:
+          Então, retiramos esses 15 dias do total:
+
           <div class="calculo">
             62,5 - 15 = 47,5 dias
           </div>
+
           Esse é o saldo de férias que ainda precisa ser pago.
         </div>
 
-        <div class="etapa">
-          <h3>Etapa 5 — Calcular o valor de 1 dia de salário</h3>
+        <div class="etapa telaResolucao">
+          <h3>Etapa 5 — Calcular o valor de 1 dia</h3>
           O salário mensal era de <strong>R$ 3.600,00</strong>.
           <br><br>
-          Como a questão manda considerar mês com 30 dias:
+          A questão mandou considerar o mês com 30 dias.
+
           <div class="calculo">
             R$ 3.600,00 ÷ 30 = R$ 120,00 por dia
           </div>
         </div>
 
-        <div class="etapa">
-          <h3>Etapa 6 — Calcular o valor das férias sem o adicional</h3>
+        <div class="etapa telaResolucao">
+          <h3>Etapa 6 — Calcular as férias sem o adicional</h3>
           O empregado tem direito a receber <strong>47,5 dias</strong>.
           <br><br>
           Cada dia vale <strong>R$ 120,00</strong>.
+
           <div class="calculo">
             47,5 × R$ 120,00 = R$ 5.700,00
           </div>
         </div>
 
-        <div class="etapa">
+        <div class="etapa telaResolucao">
           <h3>Etapa 7 — Calcular o adicional de 1/3</h3>
           Agora aplicamos o adicional constitucional de férias:
+
           <div class="calculo">
             R$ 5.700,00 ÷ 3 = R$ 1.900,00
           </div>
         </div>
 
-        <div class="etapa">
+        <div class="etapa telaResolucao">
           <h3>Etapa 8 — Somar tudo</h3>
           Valor das férias:
+
           <div class="calculo">
             R$ 5.700,00
           </div>
+
           Adicional de 1/3:
+
           <div class="calculo">
             R$ 1.900,00
           </div>
+
           Total devido:
+
           <div class="calculo">
             R$ 5.700,00 + R$ 1.900,00 = R$ 7.600,00
           </div>
         </div>
 
-        <div class="etapa" style="background:#dff7e7; border-left-color:#1f9d55;">
+        <div class="etapa telaResolucao" style="background:#dff7e7; border-left-color:#1f9d55;">
           <h3>Gabarito</h3>
           A alternativa correta é:
+
           <div class="calculo">
             D) R$ 7.600,00
           </div>
+
+          <strong>Resumo do raciocínio:</strong>
+          <br><br>
+          25 meses trabalhados geram 62,5 dias de férias.  
+          Como o empregado já gozou 15 dias, restaram 47,5 dias.  
+          Multiplicando pelo valor diário e somando 1/3, chegamos a 
+          <strong>R$ 7.600,00</strong>.
+        </div>
+
+        <div class="botoesResolucao">
+          <button class="btn" onclick="voltarEtapa()">⬅ Voltar</button>
+          <button class="btn" onclick="avancarEtapa()">Avançar ➡</button>
         </div>
 
       </div>
@@ -351,6 +415,8 @@ input{
 </div>
 
 <script>
+let etapaAtual = 0;
+
 function liberar(){
   const nome = document.getElementById("nome").value.trim();
   const whatsapp = document.getElementById("whatsapp").value.trim();
@@ -378,13 +444,47 @@ function responder(botao, correta){
     botoes[3].classList.add('correta');
   }
 
-  document.getElementById('explicacao').style.display = 'block';
+  mostrarResolucao();
 }
 
 function mostrarResolucao(){
   document.getElementById('explicacao').style.display = 'block';
+  etapaAtual = 0;
+  atualizarEtapas();
+
   const botoes = document.querySelectorAll('.alternativa');
   botoes[3].classList.add('correta');
+}
+
+function atualizarEtapas(){
+  const etapas = document.querySelectorAll('.telaResolucao');
+
+  etapas.forEach((etapa, index) => {
+    etapa.classList.remove('ativa');
+
+    if(index === etapaAtual){
+      etapa.classList.add('ativa');
+    }
+  });
+
+  document.getElementById("contador").innerText = 
+    "Etapa " + (etapaAtual + 1) + " de " + etapas.length;
+}
+
+function avancarEtapa(){
+  const etapas = document.querySelectorAll('.telaResolucao');
+
+  if(etapaAtual < etapas.length - 1){
+    etapaAtual++;
+    atualizarEtapas();
+  }
+}
+
+function voltarEtapa(){
+  if(etapaAtual > 0){
+    etapaAtual--;
+    atualizarEtapas();
+  }
 }
 
 function reiniciar(){
@@ -396,6 +496,9 @@ function reiniciar(){
   });
 
   document.getElementById('explicacao').style.display = 'none';
+
+  etapaAtual = 0;
+  atualizarEtapas();
 }
 </script>
 
